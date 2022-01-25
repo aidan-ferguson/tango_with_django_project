@@ -3,6 +3,11 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=128, unique=True)
+    views = models.BigIntegerField(default=0)
+    likes = models.BigIntegerField(default=0)
+
+    class Meta:
+        verbose_name_plural = 'Categories'
 
     def __str__(self):
         return self.name
